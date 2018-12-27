@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>to-do list</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- <script src="https://code.jquery.com/jquery-1.4.4.min.js" integrity="sha256-UXNk8tRRYvtQN0N7W2y5U9ANmys7ebqH2f5X6m7mBww="
+            crossorigin="anonymous"></script> -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/template.js"></script>
+        <script src="js/script.js"></script>
+   <script type="text/template" id="wrapper-todo">
+        <h2>To-do list</h2>
+          <ul class="item-list"></ul>
+            <div class="item-controlls">
+                <input type="text" name="" class="item-value">
+                <button class="item-add">Add</button>
+            </div>
+    </script>
+   <script type="text/template" id="list-todo">
+        <% for (var i = 0; i < data.length; i++) { %>
+            <li ><%= data[i] %> <span data-value="<%= data[i] %>" class="item-delete">X</span></li><% }; %>
+    </script>
+</body>
+</html>
