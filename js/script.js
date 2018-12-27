@@ -1,6 +1,6 @@
 function Model() {
     var self = this;
-    self.data = [];
+    self.data = ['Ваши предпочтения', 'Возможности','Цели'];
     self.addItem = function(item) {
         if (item == 0) {
             return;

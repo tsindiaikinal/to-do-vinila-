@@ -1,5 +1,127 @@
+
+* {
+  font-family: sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-weight:normal;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#todo-content {
+  max-width: 920px;
+  min-height: 300px;
+  position: relative;
+  top: 50px;
+  margin: auto;
+  border: 1px solid lightgray;
+  background:#fff;
+  border-radius:4px;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 
+             0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+         
+#todo-content:before,
+#todo-content:after {
+        content:"";
+        position:absolute;
+        z-index:-2;
+        bottom:15px;
+        left:10px;
+        width:50%;
+        height:20%;
+        max-width:300px;
+        box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+        transform:rotate(-3deg);
+}
+         
+#todo-content:after {
+    right:10px;
+    left:auto;
+    transform:rotate(3deg);
+}
+
+ul {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  /* left: 25px; */
+  list-style: none;
+}
+
+li {
+  width: 90%;
+  margin: 10px 10px 5px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 20px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+}
+
+.item-controlls {
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  margin: auto;
+}
+
+input {
+  border: none;
+  
+}
+
+input:focus {
+  box-shadow: none;
+}
+.item-value {
+  border: 1px solid rgb(133, 236, 188);
+  padding: 5px;
+}
+
+.item-value,
+.item-add {
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.item-value:focus {
+  box-shadow: 0 0 2px #76eeda;
+  outline: none;
+}
+
+.item-add {
+  /* text-transform: uppercase; */
+  padding: 5px 15px 5px;
+  border: 1px solid rgb(133, 236, 188);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+  background-color: #32cd32;
+  color: #fff;
+  }
+
+
+
+.item-add:focus {
+  background-color: #0f0;
+}
+
 span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #e2d8d8;
+  border-radius: 4px;
   font-family: sans-serif;
   color: red;
-  margin-left: 50px;
+  /* margin-left: 50px; */
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
 }
