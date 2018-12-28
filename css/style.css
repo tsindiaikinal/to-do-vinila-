@@ -7,7 +7,6 @@ h2 {
   text-transform: uppercase;
   font-weight:normal;
   text-align: center;
-  padding-top: 10px;
   padding-bottom: 30px;
 }
 
@@ -48,12 +47,11 @@ ul {
   width: 100%;
   position: absolute;
   top: 40px;
-  /* left: 25px; */
   list-style: none;
 }
 
 li {
-  width: 90%;
+  width: 89%;
   margin: 10px 10px 5px;
   height: 30px;
   line-height: 30px;
@@ -74,7 +72,6 @@ li {
 
 input {
   border: none;
-  
 }
 
 input:focus {
@@ -87,9 +84,13 @@ input:focus {
 
 .item-value,
 .item-add {
-  border-radius: 2px;
+  border-radius: 3px;
   display: inline-block;
   margin-left: 20px;
+}
+
+button::-moz-focus-inner {
+  outline: none;
 }
 
 .item-value:focus {
@@ -98,30 +99,82 @@ input:focus {
 }
 
 .item-add {
-  /* text-transform: uppercase; */
+  position: relative;
   padding: 5px 15px 5px;
   border: 1px solid rgb(133, 236, 188);
-  box-shadow: 0 0 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.4);
   background-color: #32cd32;
   color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  overflow: hidden;
+  transition: .6s;
   }
 
+  
+  .item-add:active {
+    border: none;
+    border-bottom: -5px;
+    box-shadow: none;
+  }
+  
+  .item-add::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+  }
 
+  .item-add:hover {
+    background: #338833;
+  }
 
-.item-add:focus {
-  background-color: #0f0;
+  .item-add:hover::before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    transition: 1s;
+  }
+  
+  .item-add::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) scaleX(-15deg);
+
 }
 
 span {
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  margin-top: 4px;
+  right: 8%;
+  width: 20px;
+  height: 20px;
   border: 1px solid #e2d8d8;
   border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   font-family: sans-serif;
+  font-size: 0.85rem;
   color: red;
-  /* margin-left: 50px; */
   text-align: center;
-  line-height: 25px;
+  line-height: 20px;
   cursor: pointer;
+}
+
+span:active {
+  box-shadow: none;
+  transition: .5s;
 }

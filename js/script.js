@@ -52,8 +52,8 @@ function Controller(model, view) {
     view.elements.listContainer.on('click', '.item-delete', removeItems);
     function removeItems() {
         var item = $(this).attr('data-value');
-        console.log($(this));
-        console.log(item);
+        // console.log($(this));
+        // console.log(item);
         model.removeItem(item);
             view.renderList(model.data);
         }
